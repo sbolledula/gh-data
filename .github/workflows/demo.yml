@@ -39,6 +39,6 @@ jobs:
         with:
           name: mywebsite
       - name: list-files
-        run: ls -la
+        run: ls -R
       - name: Deploy
         run: echo "Deploying..."
