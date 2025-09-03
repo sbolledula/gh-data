@@ -46,5 +46,7 @@ jobs:
         run: ls -R
       - name: Publish JS name
         run: find assets/*.js -type f -execdir echo '{}' ';'
+      - name: index-filename
+        run: echo "Index filename is ${{ needs.build.outputs.index-filename }}"
       - name: Deploy
         run: echo "Deploying..."
