@@ -25,8 +25,8 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
-#      - name: Publish JS name
- #       run: find dist/assests/*.*.js -type f -execdir echo '{}' ';'
+      - name: Publish JS name
+        run: find dist/assests/*.js -type f -execdir echo '{}' ';'
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
@@ -43,6 +43,6 @@ jobs:
       - name: list-files
         run: ls -R
       - name: Publish JS name
-        run: find ./dist/assests/index*.js -type f -execdir echo '{}' ';'
+        run: find dist/assets/*.js -type f -execdir echo '{}' ';'
       - name: Deploy
         run: echo "Deploying..."
