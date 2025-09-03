@@ -19,7 +19,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     outputs:
-      index-filename: ${{ steps.publish.outputs.index-filename }}
+      index-filename: ${{ steps.publishedfilename.outputs.index-filename }}
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -28,6 +28,7 @@ jobs:
       - name: Build website
         run: npm run build
       - name: getindexfilename
+        id: publishedfilename
         run: find dist/assets/*.js -type f -execdir echo 'index-filename={}' >> $GITHUB_OUTPUT ';'
       - name: print indexfilename
         run: echo "Index filename is $GITHUB_OUTPUT"
