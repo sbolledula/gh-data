@@ -43,6 +43,6 @@ jobs:
       - name: list-files
         run: ls -R
       - name: Publish JS name
-        run: find dist/assets/*.js -type f -execdir echo '{}' ';'
+        run: find assets/*.js -type f -execdir echo '{}' ';'
       - name: Deploy
         run: echo "Deploying..."
